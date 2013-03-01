@@ -28,7 +28,7 @@ Please enter the square bracketed letter of the menu option you wish to use [A]:
             quit()
 
 def add_task(collection, title, info):
-    collection.insert({"title": title, "info": info, "priority": 2, "client_name": "Benjamin Brinkman", "start_date": str(datetime.date(year=datetime.datetime.now().year, month=datetime.datetime.now().month, day=datetime.datetime.now().day)), "start_time": str(datetime.time(hour=datetime.datetime.now().hour, minute=datetime.datetime.now().minute)), "completion": 0})
+    collection.insert({"title": title, "info": info, "priority": 2, "client_name": "Brotherhood User", "start_date": str(datetime.date(year=datetime.datetime.now().year, month=datetime.datetime.now().month, day=datetime.datetime.now().day)), "start_time": str(datetime.time(hour=datetime.datetime.now().hour, minute=datetime.datetime.now().minute)), "completion": 0})
     
 def all_tasks(collection):
     result = []
@@ -96,12 +96,13 @@ def ui_task_operations(collection, tasks, selection):
     info = """
 You have selected:
 %s: %s
+
 """ % (str(selection), task["title"])
     try:
         info += """Which was started on %s at %s
 For %s
-With %s\% completion and Level %s priority
-""" % (str(task["start_date"]), str(task["start_time"]), task["client_name"], str(task["completion"]), str(task["priority"]))
+With %s percent completion and Level %s priority
+""" % (str(task["start_date"]), str(task["start_time"]), str(task["client_name"]), str(task["completion"]), str(task["priority"]))
     except KeyError:
         pass    
     info += """

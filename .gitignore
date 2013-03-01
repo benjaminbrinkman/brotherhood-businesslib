@@ -1,2 +1,5 @@
 #company specific
 BrinkmanIT_Management_Console.py
+
+#.pyc files
+*.pyc
